@@ -40,3 +40,68 @@
                         # 1.5 Application Of Linked Lists
 
 # - Used for symbol table management in compiler design
+
+                        # Code
+
+# 1) Singly Linked List
+
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        current = self.head
+
+        while current.next != None:
+            current = current.next
+        current.next = new_node
+
+    def length(self):
+        concurrent = self.head
+        total = 0
+        while concurrent.next != None:
+            total += 1
+            concurrent = concurrent.next
+        return total
+
+    def display(self):
+        elements = []
+        cur_node = self.head
+        while cur_node.next != None:
+            cur_node = cur_node.next
+            elements.append(cur_node.data)
+        print(elements)
+
+
+my_list = LinkedList()
+
+my_list.display()
+my_list.append(2)
+my_list.append(3)
+my_list.display()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
